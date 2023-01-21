@@ -4,7 +4,7 @@ import Content from "../components/Home/Content";
 
 const Home = () => {
   return (
-    <div className="w-full bg-neutral-200 flex h-screen ">
+    <div className="lg:w-full bg-gray-200 flex h-screen ">
       <Categories />
       <Content />
     </div>

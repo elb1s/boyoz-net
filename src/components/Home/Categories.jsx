@@ -18,7 +18,7 @@ const Categories = () => {
     <List
       sx={{
         paddingLeft: "10rem",
-        maxWidth: "450px",
+        maxWidth: "400px",
         bgcolor: "background.paper",
         height: "100vh",
       }}
