@@ -18,7 +18,7 @@ const Categories = () => {
     <List
       sx={{
         paddingLeft: "10rem",
-        maxWidth: "380px",
+        maxWidth: "450px",
         bgcolor: "background.paper",
         height: "100vh",
       }}
@@ -26,12 +26,7 @@ const Categories = () => {
       aria-labelledby="nested-list-subheader"
     >
       <ListItem disablePadding>
-        <ListItemButton
-          selected={selectedIndex === 0}
-          onClick={(e) => handleListItemClick(e, 0)}
-        >
-          <ListItemText primary={<Search />} />
-        </ListItemButton>
+        <ListItemText primary={<Search />} />
       </ListItem>
       <ListItem disablePadding>
         <ListItemButton
