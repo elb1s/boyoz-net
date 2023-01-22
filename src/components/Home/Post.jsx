@@ -4,11 +4,10 @@ import av from "../../assets/avatar.jpg";
 import { Button } from "@mui/material";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import Chip from "@mui/material/Chip";
 
 const Post = () => {
   return (
-    <div className="mt-10 bg-neutral-100 w-[60vw] md:max-w-[50vw] h-60 p-8 shadow-xl rounded-lg ">
+    <div className="mt-10 bg-neutral-100 p-8 shadow-xl max-w-4xl h-max  rounded-lg ">
       <div className="flex">
         <Avatar sx={{ width: 45, height: 45 }} alt="Remy Sharp" src={av} />
 
@@ -17,9 +16,9 @@ const Post = () => {
           <p className="text-[12px] text-gray-600 ">5 min ago</p>
         </div>
       </div>
-      <div className="mt-4 h-24 overflow-hidden">
+      <div className="mt-4 h-22 overflow-hidden ">
         <h1 className="font-boldish text-xl">How to patch KDE on FreeBSD?</h1>
-        <p className="text-black mt-2">
+        <p className="text-black mt-2  hidden md:block">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
           quaerat sapiente nulla molestias magni? Labore ratione vero aut
           pariatur incidunt. Iure sequi perspiciatis repellendus cumque

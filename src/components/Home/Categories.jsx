@@ -17,11 +17,11 @@ const Categories = () => {
   return (
     <List
       sx={{
-        paddingLeft: "10rem",
         maxWidth: "400px",
         bgcolor: "background.paper",
         height: "100vh",
       }}
+      className="hidden md:block"
       component="nav"
       aria-labelledby="nested-list-subheader"
     >
