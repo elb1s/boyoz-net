@@ -3,7 +3,7 @@ import { Avatar } from "@mui/material";
 import avat from "../../assets/profileAvatar.png";
 const UserCart = () => {
   return (
-    <div className="h-48 mx-auto min-w-[200px]  w-[250px] bg-purple-400  hidden xl:block shadow-xl rounded-lg">
+    <div className="h-48 mx-auto min-w-[200px]  w-[250px] bg-purple-100  hidden xl:block shadow-sm rounded-lg">
       <Avatar
         sx={{ width: 120, height: 120, margin: "auto", marginTop: 2 }}
         alt="Remy Sharp"

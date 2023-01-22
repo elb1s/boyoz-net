@@ -9,10 +9,10 @@ import { Stack } from "@mui/system";
 const Tabs = () => {
   return (
     <Stack spacing={1} direction="row">
-      <Chip icon={<AccessTimeIcon />} label="New" clickable />
-      <Chip icon={<WhatshotIcon />} label="Hot" clickable />
-      <Chip icon={<NorthEastIcon />} label="Top" clickable />
-      <Chip icon={<DoneAllIcon />} label="Closed" clickable />
+      <Chip icon={<AccessTimeIcon />} label="New" clickable color="info" />
+      <Chip icon={<WhatshotIcon />} label="Hot" clickable color="info" />
+      <Chip icon={<NorthEastIcon />} label="Top" clickable color="info" />
+      <Chip icon={<DoneAllIcon />} label="Closed" clickable color="info" />
     </Stack>
   );
 };
