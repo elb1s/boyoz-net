@@ -16,7 +16,15 @@ const Comment = () => {
         </div>
       </div>
       <p className="bg-neutral-100 rounded-2xl p-2">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa soluta
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam nemo
+        aliquid autem inventore eum suscipit magni, reiciendis vero praesentium
+        enim officiis saepe. Animi nihil illum error ducimus numquam
+        cupiditateMagnam nemo aliquid autem inventore eum suscipit magni,
+        reiciendis vero praesentium enim officiis saepe. Animi nihil illum error
+        ducimus numquam cupiditate enim officiis saepe. Animi nihil illum error
+        ducimus numquam cupiditateMagnam nemo aliquid autem inventore eum
+        suscipit magni, reiciendis vero praesentium enim officiis saepe. Animi
+        nihil illum error ducimus numquam cupiditate
       </p>
       <div className=" flex mt-4 items-center  gap-3 justify-end">
         <ThumbUpIcon />

@@ -10,10 +10,19 @@ const PostDetail = () => {
           19 December 2020 19:35
         </p>
       </div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt vero
-      cupiditate animi magni reiciendis deleniti veritatis laboriosam esse,
-      perspiciatis nostrum dolorem laborum odio fugit saepe sed ducimus dicta
-      impedit itaque.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam nemo
+      aliquid autem inventore eum suscipit magni, reiciendis vero praesentium
+      enim officiis saepe. Animi nihil illum error ducimus numquam cupiditate
+      iusto?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
+      nemo aliquid autem inventore eum suscipit magni, reiciendis vero
+      praesentium enim officiis saepe. Animi nihil illum error ducimus numquam
+      cupiditate iusto?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Magnam nemo aliquid autem inventore eum suscipit magni, reiciendis vero
+      praesentium enim officiis saepe. Animi nihil illum error ducimus numquam
+      cupiditate iusto?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Magnam nemo aliquid autem inventore eum suscipit magni, reiciendis vero
+      praesentium enim officiis saepe. Animi nihil illum error ducimus numquam
+      cupiditate iusto?
       <div className="justify-between flex mt-1 items-center ">
         <div className="">
           <Button size="small" variant="text">

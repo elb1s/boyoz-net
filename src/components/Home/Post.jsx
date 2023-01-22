@@ -21,9 +21,6 @@ const Post = () => {
         <p className="text-black mt-2  hidden md:block">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
           molestias, ut sed ipsum, quisquam Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Doloremque molestias, ut sed ipsum,
-          quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Doloremque molestias, ut sed ipsum, quisquam
         </p>
       </div>
       <div className="justify-between flex mt-1 items-center ">
