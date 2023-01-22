@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import PostView from "./Pages/PostView";
 import { createTheme, ThemeProvider } from "@mui/material";
 import CreatePost from "./Pages/CreatePost";
+
 function App() {
   const theme = createTheme({
     palette: {

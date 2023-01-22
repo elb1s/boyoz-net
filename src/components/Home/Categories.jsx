@@ -15,7 +15,7 @@ const Categories = () => {
   return (
     <List
       sx={{
-        paddingLeft: "9rem",
+        marginLeft: "5rem",
         height: "100vh",
       }}
       className="hidden md:block"

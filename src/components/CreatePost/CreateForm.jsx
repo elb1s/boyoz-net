@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import PostCateg from "./PostCateg";
 const CreateForm = () => {
   return (

@@ -7,7 +7,7 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 const Post = () => {
   return (
-    <div className="mt-10 bg-white/90 p-8 shadow-sm max-w-4xl h-max  rounded-sm ">
+    <div className="mt-4 bg-white/90 p-3 shadow-sm   xl:max-w-3xl h-max  rounded-sm ">
       <div className="flex">
         <Avatar sx={{ width: 45, height: 45 }} alt="Remy Sharp" src={av} />
 
@@ -19,10 +19,11 @@ const Post = () => {
       <div className="mt-4 h-22 overflow-hidden ">
         <h1 className="font-boldish text-xl">How to patch KDE on FreeBSD?</h1>
         <p className="text-black mt-2  hidden md:block">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          quaerat sapiente nulla molestias magni? Labore ratione vero aut
-          pariatur incidunt. Iure sequi perspiciatis repellendus cumque
-          accusantium consectetur adipisci mollitia dolor!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+          molestias, ut sed ipsum, quisquam Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Doloremque molestias, ut sed ipsum,
+          quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Doloremque molestias, ut sed ipsum, quisquam
         </p>
       </div>
       <div className="justify-between flex mt-1 items-center ">
