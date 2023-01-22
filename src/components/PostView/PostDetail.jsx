@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 const PostDetail = () => {
   return (
-    <div className=" bg-neutral-100 max-w-5xl h-max  p-8 shadow-xl rounded-lg  ">
+    <div className=" bg-neutral-100 max-w-5xl h-max  p-8 shadow-xl rounded-sm  ">
       <div>
         <h1 className="text-2xl font-boldish">How to fatch KDE on FreeBSD?</h1>
         <p className="text-[13px] text-gray-600 pb-4 pt-1 ">

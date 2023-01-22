@@ -7,7 +7,7 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 const Post = () => {
   return (
-    <div className="mt-10 bg-neutral-100 p-8 shadow-xl max-w-4xl h-max  rounded-lg ">
+    <div className="mt-10 bg-neutral-100 p-8 shadow-xl max-w-4xl h-max  rounded-sm ">
       <div className="flex">
         <Avatar sx={{ width: 45, height: 45 }} alt="Remy Sharp" src={av} />
 
