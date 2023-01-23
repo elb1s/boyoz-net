@@ -7,7 +7,8 @@ import Home from "./Pages/Home";
 import PostView from "./Pages/PostView";
 import { createTheme, ThemeProvider } from "@mui/material";
 import CreatePost from "./Pages/CreatePost";
-import { AppContextProvider } from "./context/AppContext";
+import { AppContext } from "./context/AppContext";
+import { useState } from "react";
 function App() {
   const theme = createTheme({
     palette: {
@@ -28,18 +29,24 @@ function App() {
       },
     },
   });
+  const [postList, setPostList] = useState([]);
+  const [postDetail, setPostDeatil] = useState("");
+
+  const values = { postList, setPostList, postDetail, setPostDeatil };
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/postview" element={<PostView />} />
-          <Route path="/createpost" element={<CreatePost />} />
-        </Routes>
-      </Router>
+      <AppContext.Provider value={values}>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/postview/:id" element={<PostView />} />
+            <Route path="/createpost" element={<CreatePost />} />
+          </Routes>
+        </Router>
+      </AppContext.Provider>
     </ThemeProvider>
   );
 }

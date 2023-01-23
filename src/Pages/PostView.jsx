@@ -1,7 +1,5 @@
-import { TextField } from "@mui/material";
-import React from "react";
-import Categories from "../components/Home/Categories";
-
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Comment from "../components/PostView/Comment";
 import UserCart from "../components/PostView/UserCart";
 import PostDetail from "../components/PostView/PostDetail";
