@@ -2,9 +2,12 @@ import { TextField } from "@mui/material";
 import { LogButton } from "./LogButton";
 import React from "react";
 import { useFormik } from "formik";
-import { basicSchema } from "../../schemas/RegisterSchema";
-
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/Config";
 const onSubmit = (values, actions) => {
+  signInWithEmailAndPassword(auth, values.email, values.password)
+    .then((res) => console.log(res.user))
+    .catch((err) => console.log(err));
   actions.resetForm();
 };
 

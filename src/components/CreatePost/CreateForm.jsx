@@ -1,25 +1,37 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import { createPoSchema } from "../../schemas/CreatePostSchema";
-
+import { db, auth } from "../../firebase/Config";
+import { addDoc, collection } from "firebase/firestore";
 const onSubmit = (values, actions) => {
-  console.log(values);
-  console.log(actions);
+  createPost(values.title, values.quesBody);
   actions.resetForm();
 };
+const createPost = async (title, quesBody) => {
+  const postsCollecRef = collection(db, "posts");
+  await addDoc(postsCollecRef, {
+    title,
+    quesBody,
+    author: auth.currentUser.email,
+    authId: auth.currentUser.uid,
+  });
+};
+
 const CreateForm = () => {
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       userid: "",
       title: "",
       quesBody: "",
+      comments: [],
     },
     validationSchema: createPoSchema,
     onSubmit,
   });
   return (
-    <form className="mt-8 mx-auto  bg-indigo-100 min-w-[80vw] md:min-w-[40vw] h-[80vh] px-20 md:py-10 py-4 shadow-md">
+    <form className="mt-8 mx-auto  bg-indigo-100 min-w-[80vw] md:min-w-[40vw] h-max px-10 md:py-10 py-4 shadow-md">
       <div className=" flex flex-col gap-8">
         <h1 className="text-2xl md:text-3xl font-boldish">New Question</h1>
         <TextField

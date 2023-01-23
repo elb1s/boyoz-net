@@ -4,7 +4,7 @@ import React from "react";
 
 const AskQuButton = () => {
   return (
-    <Button variant="contained" className="gap-1">
+    <Button variant="contained" className="gap-1" href="/createpost">
       <ControlPointIcon fontSize="small" />
       Ask Question
     </Button>

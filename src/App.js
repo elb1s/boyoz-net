@@ -1,14 +1,13 @@
 import "./App.css";
 import Navbar from "./components/Others/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Register from "./Pages/Register";
 import LogIn from "./Pages/LogIn";
 import Home from "./Pages/Home";
 import PostView from "./Pages/PostView";
 import { createTheme, ThemeProvider } from "@mui/material";
 import CreatePost from "./Pages/CreatePost";
-
+import { AppContextProvider } from "./context/AppContext";
 function App() {
   const theme = createTheme({
     palette: {

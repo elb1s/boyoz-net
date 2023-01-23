@@ -3,8 +3,12 @@ import { RegButton } from "./RegButton";
 import React from "react";
 import { useFormik } from "formik";
 import { basicSchema } from "../../schemas/RegisterSchema";
-
+import { auth } from "../../firebase/Config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 const onSubmit = (values, actions) => {
+  createUserWithEmailAndPassword(auth, values.email, values.password)
+    .then((res) => console.log(res.user))
+    .catch((err) => console.log(err));
   actions.resetForm();
 };
 
