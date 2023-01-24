@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { Button } from "@mui/material";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { AppContext } from "../../context/AppContext";
+import Comment from "./Comment";
 const PostDetail = () => {
   const { postDetail, isDark } = useContext(AppContext);
-
   return (
     <div
       className={`${
@@ -17,10 +15,14 @@ const PostDetail = () => {
           19 December 2020 19:35
         </p>
       </div>
-      {postDetail.quesBody}
+      <div>{postDetail.quesBody}</div>
       <div className="justify-between flex mt-1 items-center ">
         <div className="flex gap-4 items-center"></div>
       </div>
+      {postDetail.comments &&
+        postDetail?.comments.map((comment) => (
+          <Comment key={comment.authId} comment={comment} />
+        ))}
     </div>
   );
 };

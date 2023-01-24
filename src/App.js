@@ -29,6 +29,7 @@ function App() {
       },
     },
   });
+  const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [postList, setPostList] = useState([]);
   const [postDetail, setPostDeatil] = useState("");
@@ -42,6 +43,8 @@ function App() {
     setIsDark,
     isAuth,
     setIsAuth,
+    setUser,
+    user,
   };
   return (
     <ThemeProvider theme={theme}>

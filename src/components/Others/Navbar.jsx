@@ -11,7 +11,7 @@ import { AppContext } from "../../context/AppContext";
 import LogOut from "./LogOut";
 
 const Navbar = () => {
-  const { isDark, isAuth } = useContext(AppContext);
+  const { isDark, isAuth, user } = useContext(AppContext);
 
   return (
     <div
@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="cursor-pointer">
         <Icon />
       </div>
-      {isAuth ? (
+      {isAuth && user !== null ? (
         <>
           <AskQuButton />
           <div>
