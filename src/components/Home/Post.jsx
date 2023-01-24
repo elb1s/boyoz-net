@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import av from "../../assets/avatar.jpg";
 import { Button } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
+import { auth } from "../../firebase/Config";
 const Post = ({ post, deletePost }) => {
   const navigate = useNavigate();
   const { postList, setPostDeatil, isDark } = useContext(AppContext);
@@ -28,7 +29,6 @@ const Post = ({ post, deletePost }) => {
             <Avatar sx={{ width: 45, height: 45 }} alt="Remy Sharp" src={av} />
             <div className="pl-4">
               <p className={`${isDark ? "text-pink-200" : "text-black"}`}>
-                {" "}
                 {post.author}
               </p>
               <p className="text-[12px] text-gray-500 ">5 min ago</p>
@@ -45,10 +45,11 @@ const Post = ({ post, deletePost }) => {
             </p>
           </div>
         </div>
-
-        <div className="flex justify-end mr-2">
-          <Button onClick={() => deletePost(post.id)}>DELETE</Button>
-        </div>
+        {post.authId === auth.currentUser.uid && (
+          <div className="flex justify-end mr-2">
+            <Button onClick={() => deletePost(post.id)}>DELETE</Button>
+          </div>
+        )}
       </div>
     </div>
   );

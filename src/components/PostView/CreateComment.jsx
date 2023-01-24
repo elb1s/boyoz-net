@@ -4,7 +4,7 @@ import { AppContext } from "../../context/AppContext";
 import { useFormik } from "formik";
 import { commentSchema } from "../../schemas/CommentSchema";
 import { db, auth } from "../../firebase/Config";
-import { doc, getDoc, addDoc } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
 const CreateComment = () => {
@@ -13,9 +13,10 @@ const CreateComment = () => {
 
   const createComment = async (author, authorId, comment) => {
     const docRef = doc(db, "posts", id);
-    const docSnap = await getDoc(docRef);
 
-    docSnap.data().comments.push(1, 2, 3, 4);
+    await updateDoc(docRef, {
+      comments: arrayUnion({ author, authorId, comment }),
+    });
   };
 
   const onSubmit = (values, actions) => {
