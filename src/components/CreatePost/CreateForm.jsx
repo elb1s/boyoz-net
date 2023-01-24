@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { createPoSchema } from "../../schemas/CreatePostSchema";
 import { db, auth } from "../../firebase/Config";
 import { addDoc, collection } from "firebase/firestore";
-import { AppProvider } from "../../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 const onSubmit = (values, actions) => {
   createPost(values.title, values.quesBody);
   actions.resetForm();
@@ -21,7 +21,7 @@ const createPost = async (title, quesBody) => {
 };
 
 const CreateForm = () => {
-  const { isDark } = useContext(AppProvider);
+  const { isDark } = useContext(AppContext);
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       userid: "",

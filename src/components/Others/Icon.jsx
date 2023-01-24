@@ -1,8 +1,8 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { useContext } from "react";
-import { AppProvider } from "../../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 export const Icon = () => {
-  const { isDark, setIsDark } = useContext(AppProvider);
+  const { isDark, setIsDark } = useContext(AppContext);
   return (
     <DarkModeIcon
       onClick={() => {

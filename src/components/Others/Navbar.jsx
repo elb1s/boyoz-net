@@ -7,15 +7,12 @@ import { Link, NavLink } from "react-router-dom";
 import AskQuButton from "./AskQuButton";
 import HomeIcon from "@mui/icons-material/Home";
 import { Button } from "@mui/material";
-import { AppProvider } from "../../context/AppContext";
+import { AppContext } from "./context/AppContext";
+
 import LogOut from "./LogOut";
 
 const Navbar = () => {
-<<<<<<< HEAD
-  const { isDark, isAuth, user } = useContext(AppProvider);
-=======
   const { isDark, isAuth } = useContext(AppContext);
->>>>>>> parent of e88104a (added redirections)
 
   return (
     <div

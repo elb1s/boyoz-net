@@ -1,23 +1,15 @@
 import React, { useContext } from "react";
 import Content from "../components/Home/Content";
-<<<<<<< HEAD
-import { AppProvider } from "../context/AppContext";
+import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
-  const { isDark, user } = useContext(AppProvider);
+  const { isDark, user } = useContext(AppContext);
   const navigate = useNavigate();
   useEffect(() => {
     if (user === null) {
       navigate("/login");
     }
   });
-=======
-import { AppContext } from "../context/AppContext";
-
-const Home = () => {
-  const { isDark } = useContext(AppContext);
-
->>>>>>> parent of e88104a (added redirections)
   return (
     <div
       className={`${

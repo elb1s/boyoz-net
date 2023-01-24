@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import av from "../../assets/avatar.jpg";
 import { Button } from "@mui/material";
-import { AppProvider } from "../../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 import { auth } from "../../firebase/Config";
 const Post = ({ post, deletePost }) => {
   const navigate = useNavigate();
-  const { postList, setPostDeatil, isDark } = useContext(AppProvider);
+  const { postList, setPostDeatil, isDark } = useContext(AppContext);
   const getPostDetail = (id) => {
     const postDetails = postList.filter((post) => post.id === id);
     setPostDeatil(postDetails[0]);

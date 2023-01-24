@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import PostView from "./Pages/PostView";
 import { createTheme, ThemeProvider } from "@mui/material";
 import CreatePost from "./Pages/CreatePost";
-import { AppProvider } from "./context/AppContext";
+import { AppContext } from "./context/AppContext";
 import { useState } from "react";
 function App() {
   const theme = createTheme({
@@ -29,9 +29,6 @@ function App() {
       },
     },
   });
-<<<<<<< HEAD
-
-=======
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [postList, setPostList] = useState([]);
   const [postDetail, setPostDeatil] = useState("");
@@ -46,10 +43,9 @@ function App() {
     isAuth,
     setIsAuth,
   };
->>>>>>> parent of e88104a (added redirections)
   return (
     <ThemeProvider theme={theme}>
-      <AppProvider>
+      <AppContext.Provider value={values}>
         <Router>
           <Navbar />
           <Routes>
@@ -60,7 +56,7 @@ function App() {
             <Route path="/createpost" element={<CreatePost />} />
           </Routes>
         </Router>
-      </AppProvider>
+      </AppContext.Provider>
     </ThemeProvider>
   );
 }

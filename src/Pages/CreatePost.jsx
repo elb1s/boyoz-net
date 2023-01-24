@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import CreateForm from "../components/CreatePost/CreateForm";
-import { AppProvider } from "../context/AppContext";
+import { AppContext } from "./context/AppContext";
 
 const CreatePost = () => {
-  const { isDark } = useContext(AppProvider);
+  const { isDark } = useContext(AppContext);
   return (
     <div
       className={`${

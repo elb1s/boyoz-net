@@ -1,17 +1,8 @@
 import React, { useContext } from "react";
-<<<<<<< HEAD
-import { AppProvider } from "../../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 import Comment from "./Comment";
 const PostDetail = () => {
-  const { postDetail, isDark } = useContext(AppProvider);
-=======
-import { Button } from "@mui/material";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import { AppContext } from "../../context/AppContext";
-const PostDetail = () => {
   const { postDetail, isDark } = useContext(AppContext);
-
->>>>>>> parent of e88104a (added redirections)
   return (
     <div
       className={`${

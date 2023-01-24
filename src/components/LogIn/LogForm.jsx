@@ -4,14 +4,9 @@ import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/Config";
-import { AppProvider } from "../../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 const LogForm = () => {
-<<<<<<< HEAD
-  const { setIsAuth, setUser, user } = useContext(AppProvider);
-  const navigate = useNavigate();
-=======
   const { setIsAuth } = useContext(AppContext);
->>>>>>> parent of e88104a (added redirections)
   const onSubmit = (values, actions) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {

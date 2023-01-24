@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import bg from "../assets/bg.jpg";
 import RegForm from "../components/Register/RegForm";
-import { AppProvider } from "../context/AppContext";
+import { AppContext } from "../context/AppContext";
 const Register = () => {
-  const { isDark } = useContext(AppProvider);
+  const { isDark } = useContext(AppContext);
 
   const styles = {
     container: "flex justify-center w-full h-screen ",

@@ -1,15 +1,9 @@
 import React, { useContext } from "react";
 import av from "../../assets/avatar.jpg";
 import { Avatar } from "@mui/material";
-<<<<<<< HEAD
-import { AppProvider } from "../../context/AppContext";
-const Comment = ({ comment }) => {
-  const { isDark } = useContext(AppProvider);
-=======
 import { AppContext } from "../../context/AppContext";
 const Comment = () => {
   const { isDark } = useContext(AppContext);
->>>>>>> parent of e88104a (added redirections)
   return (
     <div
       className={`${
