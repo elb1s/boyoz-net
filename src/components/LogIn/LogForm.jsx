@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/Config";
-import { AppContext } from "../../context/AppContext";
+import { AppProvider } from "../../context/AppContext";
 const LogForm = () => {
-  const { setIsAuth, setUser, user } = useContext(AppContext);
+  const { setIsAuth, setUser, user } = useContext(AppProvider);
   const navigate = useNavigate();
   const onSubmit = (values, actions) => {
     signInWithEmailAndPassword(auth, values.email, values.password)

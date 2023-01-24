@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import bg from "../assets/bg.jpg";
 import LogForm from "../components/LogIn/LogForm";
-import { AppContext } from "../context/AppContext";
+import { AppProvider } from "../context/AppContext";
 
 const LogIn = () => {
-  const { isDark } = useContext(AppContext);
+  const { isDark } = useContext(AppProvider);
   const styles = {
     container: "flex justify-center w-full h-screen ",
     containerLeft: `${

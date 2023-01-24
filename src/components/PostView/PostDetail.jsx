@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppProvider } from "../../context/AppContext";
 import Comment from "./Comment";
 const PostDetail = () => {
-  const { postDetail, isDark } = useContext(AppContext);
+  const { postDetail, isDark } = useContext(AppProvider);
   return (
     <div
       className={`${

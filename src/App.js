@@ -7,7 +7,7 @@ import Home from "./Pages/Home";
 import PostView from "./Pages/PostView";
 import { createTheme, ThemeProvider } from "@mui/material";
 import CreatePost from "./Pages/CreatePost";
-import { AppContext } from "./context/AppContext";
+import { AppProvider } from "./context/AppContext";
 import { useState } from "react";
 function App() {
   const theme = createTheme({
@@ -29,26 +29,10 @@ function App() {
       },
     },
   });
-  const [user, setUser] = useState(null);
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-  const [postList, setPostList] = useState([]);
-  const [postDetail, setPostDeatil] = useState("");
-  const [isDark, setIsDark] = useState(true);
-  const values = {
-    postList,
-    setPostList,
-    postDetail,
-    setPostDeatil,
-    isDark,
-    setIsDark,
-    isAuth,
-    setIsAuth,
-    setUser,
-    user,
-  };
+
   return (
     <ThemeProvider theme={theme}>
-      <AppContext.Provider value={values}>
+      <AppProvider>
         <Router>
           <Navbar />
           <Routes>
@@ -59,7 +43,7 @@ function App() {
             <Route path="/createpost" element={<CreatePost />} />
           </Routes>
         </Router>
-      </AppContext.Provider>
+      </AppProvider>
     </ThemeProvider>
   );
 }

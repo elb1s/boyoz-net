@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import av from "../../assets/avatar.jpg";
 import { Avatar } from "@mui/material";
-import { AppContext } from "../../context/AppContext";
+import { AppProvider } from "../../context/AppContext";
 const Comment = ({ comment }) => {
-  const { isDark } = useContext(AppContext);
+  const { isDark } = useContext(AppProvider);
   return (
     <div
       className={`${

@@ -3,9 +3,9 @@ import Comment from "../components/PostView/Comment";
 import UserCart from "../components/PostView/UserCart";
 import PostDetail from "../components/PostView/PostDetail";
 import CreateComment from "../components/PostView/CreateComment";
-import { AppContext } from "../context/AppContext";
+import { AppProvider } from "../context/AppContext";
 const PostView = () => {
-  const { isDark } = useContext(AppContext);
+  const { isDark } = useContext(AppProvider);
   return (
     <div
       className={`${

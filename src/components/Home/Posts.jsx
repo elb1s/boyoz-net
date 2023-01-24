@@ -1,11 +1,11 @@
 import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
 import React, { useContext, useEffect } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppProvider } from "../../context/AppContext";
 import { db } from "../../firebase/Config";
 import Post from "./Post";
 
 const Posts = () => {
-  const { postList, setPostList } = useContext(AppContext);
+  const { postList, setPostList } = useContext(AppProvider);
   const postsCollRef = collection(db, "posts");
 
   const getPosts = async () => {

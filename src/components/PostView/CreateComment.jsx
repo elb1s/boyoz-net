@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import React, { useContext } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppProvider } from "../../context/AppContext";
 import { useFormik } from "formik";
 import { commentSchema } from "../../schemas/CommentSchema";
 import { db, auth } from "../../firebase/Config";
@@ -8,7 +8,7 @@ import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 
 const CreateComment = () => {
-  const { isDark } = useContext(AppContext);
+  const { isDark } = useContext(AppProvider);
   const { id } = useParams();
 
   const createComment = async (author, authorId, comment) => {
