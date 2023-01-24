@@ -7,12 +7,12 @@ import { Link, NavLink } from "react-router-dom";
 import AskQuButton from "./AskQuButton";
 import HomeIcon from "@mui/icons-material/Home";
 import { Button } from "@mui/material";
-import { AppContext } from "./context/AppContext";
+import { AppContext } from "../../context/AppContext";
 
 import LogOut from "./LogOut";
 
 const Navbar = () => {
-  const { isDark, isAuth } = useContext(AppContext);
+  const { isDark, isAuth, user } = useContext(AppContext);
 
   return (
     <div
@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="cursor-pointer">
         <Icon />
       </div>
-      {isAuth ? (
+      {isAuth && user ? (
         <>
           <AskQuButton />
           <div>
