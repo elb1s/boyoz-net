@@ -5,12 +5,13 @@ import av from "../../assets/avatar.jpg";
 import { Button } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
 const Post = ({ post, deletePost }) => {
+  const navigate = useNavigate();
   const { postList, setPostDeatil, isDark } = useContext(AppContext);
   const getPostDetail = (id) => {
     const postDetails = postList.filter((post) => post.id === id);
     setPostDeatil(postDetails[0]);
   };
-  const navigate = useNavigate();
+
   const goDetail = (id) => {
     getPostDetail(id);
     navigate(`/postview/${id}`);
@@ -20,7 +21,7 @@ const Post = ({ post, deletePost }) => {
       <div
         className={`${
           isDark ? "bg-gray-800 text-gray-300" : "bg-white/90"
-        }  mt-4 mb-4  p-3 shadow-sm xl:max-w-3xl h-max  rounded-sm cursor-pointer`}
+        }  mt-4 mb-4  p-3 shadow-sm xl:max-w-3xl h-max    rounded-sm cursor-pointer`}
       >
         <div onClick={() => goDetail(post.id)}>
           <div className="flex">

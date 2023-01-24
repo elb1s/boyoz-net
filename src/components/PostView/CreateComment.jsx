@@ -3,17 +3,29 @@ import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 import { useFormik } from "formik";
 import { commentSchema } from "../../schemas/CommentSchema";
-const onSubmit = (values, actions) => {
-  console.log(values);
-  console.log(actions);
-  actions.resetForm();
-};
+import { db, auth } from "../../firebase/Config";
+import { doc, getDoc, addDoc } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 const CreateComment = () => {
   const { isDark } = useContext(AppContext);
+  const { id } = useParams();
+
+  const createComment = async (author, authorId, comment) => {
+    const docRef = doc(db, "posts", id);
+    const docSnap = await getDoc(docRef);
+
+    docSnap.data().comments.push(1, 2, 3, 4);
+  };
+
+  const onSubmit = (values, actions) => {
+    createComment(values.author, values.authId, values.comment);
+    actions.resetForm();
+  };
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
-      userid: "",
+      author: auth.currentUser.email,
+      authId: auth.currentUser.uid,
       comment: "",
     },
     validationSchema: commentSchema,

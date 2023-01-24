@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import av from "../../assets/avatar.jpg";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import { Avatar } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
 const Comment = () => {

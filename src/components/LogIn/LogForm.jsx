@@ -1,17 +1,21 @@
 import { TextField } from "@mui/material";
 import { LogButton } from "./LogButton";
-import React from "react";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/Config";
-const onSubmit = (values, actions) => {
-  signInWithEmailAndPassword(auth, values.email, values.password)
-    .then((res) => console.log(res.user))
-    .catch((err) => console.log(err));
-  actions.resetForm();
-};
-
+import { AppContext } from "../../context/AppContext";
 const LogForm = () => {
+  const { setIsAuth } = useContext(AppContext);
+  const onSubmit = (values, actions) => {
+    signInWithEmailAndPassword(auth, values.email, values.password)
+      .then((res) => {
+        localStorage.setItem("isAuth", true);
+        setIsAuth(true);
+      })
+      .catch((err) => console.log(err));
+    actions.resetForm();
+  };
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       email: "",
@@ -19,6 +23,7 @@ const LogForm = () => {
     },
     onSubmit,
   });
+
   return (
     <form onSubmit={handleSubmit} className="gap-8 flex flex-col w-72 h-56">
       <TextField

@@ -8,9 +8,10 @@ import AskQuButton from "./AskQuButton";
 import HomeIcon from "@mui/icons-material/Home";
 import { Button } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
+import LogOut from "./LogOut";
 
 const Navbar = () => {
-  const { isDark } = useContext(AppContext);
+  const { isDark, isAuth } = useContext(AppContext);
 
   return (
     <div
@@ -21,20 +22,30 @@ const Navbar = () => {
       <div className="cursor-pointer">
         <Icon />
       </div>
-      <Button>
-        <Link to="/">
-          <HomeIcon />
-        </Link>
-      </Button>
-      <AskQuButton />
-      <Stack direction="row" spacing={2}>
-        <NavLink to={"/register"}>
-          <RegButton />
-        </NavLink>
-        <NavLink to={"/login"}>
-          <LogButton />
-        </NavLink>
-      </Stack>
+      {isAuth ? (
+        <>
+          <AskQuButton />
+          <div>
+            <Button>
+              <Link to="/">
+                <HomeIcon />
+              </Link>
+            </Button>
+            <LogOut />
+          </div>
+        </>
+      ) : (
+        <>
+          <Stack direction="row" spacing={2}>
+            <NavLink to={"/register"}>
+              <RegButton />
+            </NavLink>
+            <NavLink to={"/login"}>
+              <LogButton />
+            </NavLink>
+          </Stack>
+        </>
+      )}
     </div>
   );
 };

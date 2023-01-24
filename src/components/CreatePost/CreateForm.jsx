@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import { createPoSchema } from "../../schemas/CreatePostSchema";
@@ -17,6 +16,7 @@ const createPost = async (title, quesBody) => {
     quesBody,
     author: auth.currentUser.email,
     authId: auth.currentUser.uid,
+    comments: [],
   });
 };
 
