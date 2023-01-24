@@ -1,10 +1,16 @@
-import React from "react";
-import Categories from "../components/Home/Categories";
+import React, { useContext } from "react";
 import Content from "../components/Home/Content";
+import { AppContext } from "../context/AppContext";
 
 const Home = () => {
+  const { isDark } = useContext(AppContext);
+
   return (
-    <div className="lg:w-full bg-[#fbf8f8] flex h-full ">
+    <div
+      className={`${
+        isDark ? "bg-gray-900" : "bg-[#fbf8f8]"
+      } lg:w-full  flex h-full`}
+    >
       <Content />
     </div>
   );

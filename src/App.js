@@ -31,8 +31,15 @@ function App() {
   });
   const [postList, setPostList] = useState([]);
   const [postDetail, setPostDeatil] = useState("");
-
-  const values = { postList, setPostList, postDetail, setPostDeatil };
+  const [isDark, setIsDark] = useState(true);
+  const values = {
+    postList,
+    setPostList,
+    postDetail,
+    setPostDeatil,
+    isDark,
+    setIsDark,
+  };
   return (
     <ThemeProvider theme={theme}>
       <AppContext.Provider value={values}>

@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
 import { useFormik } from "formik";
 import { commentSchema } from "../../schemas/CommentSchema";
 const onSubmit = (values, actions) => {
@@ -9,6 +10,7 @@ const onSubmit = (values, actions) => {
 };
 
 const CreateComment = () => {
+  const { isDark } = useContext(AppContext);
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       userid: "",
@@ -18,7 +20,11 @@ const CreateComment = () => {
     onSubmit,
   });
   return (
-    <div className="max-w-3xl h-max mx-auto bg-white/70 rounded-md shadow-md p-8 mt-20">
+    <div
+      className={`${
+        isDark ? "bg-indigo-800 text-white" : "bg-white/70"
+      }  max-w-3xl h-max mx-auto  rounded-md shadow-md p-8 mt-20`}
+    >
       <form>
         <TextField
           inputProps={{

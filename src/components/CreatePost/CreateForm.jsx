@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import { createPoSchema } from "../../schemas/CreatePostSchema";
 import { db, auth } from "../../firebase/Config";
 import { addDoc, collection } from "firebase/firestore";
+import { AppContext } from "../../context/AppContext";
 const onSubmit = (values, actions) => {
   createPost(values.title, values.quesBody);
   actions.resetForm();
@@ -20,6 +21,7 @@ const createPost = async (title, quesBody) => {
 };
 
 const CreateForm = () => {
+  const { isDark } = useContext(AppContext);
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       userid: "",
@@ -31,8 +33,16 @@ const CreateForm = () => {
     onSubmit,
   });
   return (
-    <form className="mt-8 mx-auto  bg-indigo-100 min-w-[80vw] md:min-w-[40vw] h-max px-10 md:py-10 py-4 shadow-md">
-      <div className=" flex flex-col gap-8">
+    <form
+      className={`${
+        isDark ? "bg-gray-800" : "bg-indigo-100"
+      }  mt-8 mx-auto   min-w-[80vw] md:min-w-[40vw] h-max px-10 md:py-10 py-4 shadow-md`}
+    >
+      <div
+        className={`${
+          isDark ? "text-white" : "text-black"
+        }  flex flex-col gap-8`}
+      >
         <h1 className="text-2xl md:text-3xl font-boldish">New Question</h1>
         <TextField
           id="title"

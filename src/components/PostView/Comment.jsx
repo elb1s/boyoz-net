@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import av from "../../assets/avatar.jpg";
 import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import { Avatar } from "@mui/material";
-
+import { AppContext } from "../../context/AppContext";
 const Comment = () => {
+  const { isDark } = useContext(AppContext);
   return (
-    <div className="bg-orange-200 rounded-3xl max-w-3xl mx-auto h-max  p-4 shadow-md mt-10 ">
+    <div
+      className={`${
+        isDark ? "bg-indigo-400" : "bg-neutral-200"
+      } rounded-3xl max-w-3xl mx-auto h-max  p-4 shadow-md mt-10 `}
+    >
       <div className="flex  ">
         <Avatar sx={{ width: 45, height: 45 }} alt="Remy Sharp" src={av} />
 
@@ -26,10 +31,6 @@ const Comment = () => {
         suscipit magni, reiciendis vero praesentium enim officiis saepe. Animi
         nihil illum error ducimus numquam cupiditate
       </p>
-      <div className=" flex mt-4 items-center  gap-3 justify-end">
-        <ThumbUpIcon />
-        <ThumbDownIcon />
-      </div>
     </div>
   );
 };
