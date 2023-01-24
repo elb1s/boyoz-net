@@ -16,6 +16,7 @@ const PostView = () => {
         <div>
           <PostDetail />
           <CreateComment />
+          <Comment />
         </div>
         <UserCart />
       </div>

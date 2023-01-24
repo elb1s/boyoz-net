@@ -4,11 +4,11 @@ import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: "newboyoz.firebaseapp.com",
-  projectId: "newboyoz",
-  storageBucket: "newboyoz.appspot.com",
-  messagingSenderId: "250024522997",
-  appId: "1:250024522997:web:d1d6f4b69e9131594c81bc",
+  authDomain: "dener-a4367.firebaseapp.com",
+  projectId: "dener-a4367",
+  storageBucket: "dener-a4367.appspot.com",
+  messagingSenderId: "334533571598",
+  appId: "1:334533571598:web:a092b385d3dc3f0f80f85f",
 };
 
 {

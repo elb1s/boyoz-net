@@ -1,29 +1,26 @@
 import { TextField } from "@mui/material";
 import { LogButton } from "./LogButton";
-import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
 import { useFormik } from "formik";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase/Config";
 import { AppProvider } from "../../context/AppContext";
 const LogForm = () => {
+<<<<<<< HEAD
   const { setIsAuth, setUser, user } = useContext(AppProvider);
   const navigate = useNavigate();
+=======
+  const { setIsAuth } = useContext(AppContext);
+>>>>>>> parent of e88104a (added redirections)
   const onSubmit = (values, actions) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
         localStorage.setItem("isAuth", true);
         setIsAuth(true);
-        setUser(res.user.auth);
       })
       .catch((err) => console.log(err));
     actions.resetForm();
   };
-  useEffect(() => {
-    if (user) {
-      navigate("/");
-    }
-  });
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       email: "",

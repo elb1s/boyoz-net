@@ -29,7 +29,24 @@ function App() {
       },
     },
   });
+<<<<<<< HEAD
 
+=======
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [postList, setPostList] = useState([]);
+  const [postDetail, setPostDeatil] = useState("");
+  const [isDark, setIsDark] = useState(true);
+  const values = {
+    postList,
+    setPostList,
+    postDetail,
+    setPostDeatil,
+    isDark,
+    setIsDark,
+    isAuth,
+    setIsAuth,
+  };
+>>>>>>> parent of e88104a (added redirections)
   return (
     <ThemeProvider theme={theme}>
       <AppProvider>

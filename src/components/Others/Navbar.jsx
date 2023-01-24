@@ -11,7 +11,11 @@ import { AppProvider } from "../../context/AppContext";
 import LogOut from "./LogOut";
 
 const Navbar = () => {
+<<<<<<< HEAD
   const { isDark, isAuth, user } = useContext(AppProvider);
+=======
+  const { isDark, isAuth } = useContext(AppContext);
+>>>>>>> parent of e88104a (added redirections)
 
   return (
     <div
@@ -22,7 +26,7 @@ const Navbar = () => {
       <div className="cursor-pointer">
         <Icon />
       </div>
-      {isAuth && user !== null ? (
+      {isAuth ? (
         <>
           <AskQuButton />
           <div>

@@ -5,14 +5,14 @@ import { useFormik } from "formik";
 import { basicSchema } from "../../schemas/RegisterSchema";
 import { auth } from "../../firebase/Config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+const onSubmit = (values, actions) => {
+  createUserWithEmailAndPassword(auth, values.email, values.password)
+    .then((res) => console.log(res.user))
+    .catch((err) => console.log(err));
+  actions.resetForm();
+};
 
 const RegForm = () => {
-  const navigate = useNavigate();
-  const onSubmit = (values, actions) => {
-    registerWithEmail(values.email, values.password);
-    actions.resetForm();
-  };
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       email: "",
@@ -21,13 +21,6 @@ const RegForm = () => {
     onSubmit,
     validationSchema: basicSchema,
   });
-
-  const registerWithEmail = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => navigate("/login"))
-      .catch((err) => console.log(err));
-  };
-
   return (
     <form onSubmit={handleSubmit} className="gap-8 flex flex-col w-72 h-56">
       <TextField
