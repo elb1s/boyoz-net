@@ -1,23 +1,18 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../context/AppContext";
 const PostDetail = () => {
-  const { postDetail, isDark } = useContext(AppContext);
+  const { isDark } = useContext(AppContext);
+  const post = JSON.parse(localStorage.getItem("postDetail"));
   return (
     <div
       className={`${
         isDark ? "bg-indigo-900 text-white" : "bg-white/90"
-      } shadow-md max-w-5xl h-max  p-8 rounded-sm  `}
+      } shadow-md max-w-5xl h-max min-w-min  p-8 rounded-sm  `}
     >
       <div>
-        <h1 className="text-2xl font-boldish">{postDetail?.title} </h1>
-        <p className="text-[13px] text-gray-300 pb-4 pt-1 ">
-          19 December 2020 19:35
-        </p>
+        <h1 className="text-2xl font-boldish">{post?.title} </h1>
       </div>
-      {postDetail?.quesBody}
-      <div className="justify-between flex mt-1 items-center ">
-        <div className="flex gap-4 items-center"></div>
-      </div>
+      <div>{post?.quesBody}</div>
     </div>
   );
 };

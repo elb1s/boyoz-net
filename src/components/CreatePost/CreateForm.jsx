@@ -5,13 +5,16 @@ import { createPoSchema } from "../../schemas/CreatePostSchema";
 import { db, auth } from "../../firebase/Config";
 import { addDoc, collection } from "firebase/firestore";
 import { AppContext } from "../../context/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const CreateForm = () => {
   const { isDark } = useContext(AppContext);
-
+  const navigate = useNavigate();
   const onSubmit = (values, actions) => {
     createPost(values.title, values.quesBody);
+
     actions.resetForm();
+    navigate("/");
   };
   const createPost = async (title, quesBody) => {
     const postsCollecRef = collection(db, "posts");

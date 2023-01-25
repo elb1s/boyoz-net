@@ -20,6 +20,13 @@ const CreateComment = () => {
       ...postDetail,
       comments: [...postDetail.comments, { author, authorId, comment }],
     });
+    localStorage.setItem(
+      "postDetail",
+      JSON.stringify({
+        ...postDetail,
+        comments: [...postDetail.comments, { author, authorId, comment }],
+      })
+    );
   };
 
   const onSubmit = (values, actions) => {

@@ -12,6 +12,7 @@ const Post = ({ post, deletePost }) => {
   const getPostDetail = (id) => {
     const postDetails = postList.filter((post) => post.id === id);
     setPostDetail(postDetails[0]);
+    localStorage.setItem("postDetail", JSON.stringify(postDetails[0]));
   };
 
   const goDetail = (id) => {
@@ -23,7 +24,7 @@ const Post = ({ post, deletePost }) => {
       <div
         className={`${
           isDark ? "bg-gray-800 text-gray-300" : "bg-white/90"
-        }  mt-4 mb-4  p-3 shadow-sm  h-max  max-w-3xl rounded-sm cursor-pointer`}
+        }  mt-4 mb-4  p-3 shadow-sm  h-max   md:w-[700px] min-w-xl max-w-2xl rounded-sm cursor-pointer`}
       >
         <div onClick={() => goDetail(post.id)}>
           <div className="flex">

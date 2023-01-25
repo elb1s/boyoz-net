@@ -11,6 +11,7 @@ const Posts = () => {
   const { id } = useParams();
   const getPosts = async () => {
     const data = await getDocs(postsCollRef);
+
     setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 

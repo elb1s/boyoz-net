@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import CreatePost from "./Pages/CreatePost";
 import { AppContext } from "./context/AppContext";
 import { useState } from "react";
+import Red from "./components/Others/Red";
 function App() {
   const theme = createTheme({
     palette: {
@@ -35,7 +36,7 @@ function App() {
   const [postDetail, setPostDetail] = useState([]);
   const [comments, setComments] = useState([]);
   const [isDark, setIsDark] = useState(localStorage.getItem("isDark"));
-
+  const [isLoading, setIsLoading] = useState(false);
   const values = {
     postList,
     setPostList,
@@ -49,6 +50,8 @@ function App() {
     setUser,
     comments,
     setComments,
+    isLoading,
+    setIsLoading,
   };
   return (
     <ThemeProvider theme={theme}>
@@ -61,6 +64,7 @@ function App() {
             <Route path="/login" element={<LogIn />} />
             <Route path="/postview/:id" element={<PostView />} />
             <Route path="/createpost" element={<CreatePost />} />
+            <Route path="/*" element={<Red />} />
           </Routes>
         </Router>
       </AppContext.Provider>
