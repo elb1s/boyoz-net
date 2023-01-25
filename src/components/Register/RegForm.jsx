@@ -9,13 +9,14 @@ import { useNavigate } from "react-router-dom";
 
 const RegForm = () => {
   const navigate = useNavigate();
-
   const onSubmit = (values, actions) => {
     createUserWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
         navigate("/login");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err);
+      });
     actions.resetForm();
   };
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({

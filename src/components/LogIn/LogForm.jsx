@@ -22,7 +22,9 @@ const LogForm = () => {
         setIsAuth(true);
         navigate("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        alert(err);
+      });
     actions.resetForm();
   };
 

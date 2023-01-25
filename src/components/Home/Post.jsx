@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
-import av from "../../assets/avatar.jpg";
+import av from "../../assets/avatar.svg";
 import { Button } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
 import { auth } from "../../firebase/Config";
@@ -27,13 +27,12 @@ const Post = ({ post, deletePost }) => {
         }  mt-4 mb-4  p-3 shadow-sm  h-max   md:w-[700px] min-w-xl max-w-2xl rounded-sm cursor-pointer`}
       >
         <div onClick={() => goDetail(post.id)}>
-          <div className="flex">
+          <div className="flex items-center">
             <Avatar sx={{ width: 45, height: 45 }} alt="Remy Sharp" src={av} />
             <div className="pl-4">
               <p className={`${isDark ? "text-pink-200" : "text-black"}`}>
                 {post.author}
               </p>
-              <p className="text-[12px] text-gray-500 ">5 min ago</p>
             </div>
           </div>
           <div className="mt-4 h-22 overflow-hidden ">

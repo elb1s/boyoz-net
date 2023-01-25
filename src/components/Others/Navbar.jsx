@@ -6,9 +6,9 @@ import { LogButton } from "../LogIn/LogButton";
 import { Link, NavLink } from "react-router-dom";
 import AskQuButton from "./AskQuButton";
 import HomeIcon from "@mui/icons-material/Home";
-import { Button } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
 import { AppContext } from "../../context/AppContext";
-
+import av from "../../assets/avatar.svg";
 import LogOut from "./LogOut";
 
 const Navbar = () => {
@@ -26,7 +26,16 @@ const Navbar = () => {
       {isAuth && user ? (
         <>
           <AskQuButton />
-          <div>
+
+          <div className="flex items-center">
+            <div className="md:flex items-center gap-3 hidden ">
+              <p className="md:text-xs">{user.email} </p>
+              <Avatar
+                sx={{ width: 30, height: 30 }}
+                alt="Remy Sharp"
+                src={av}
+              />
+            </div>
             <Link to="/">
               <Button>
                 <HomeIcon />
