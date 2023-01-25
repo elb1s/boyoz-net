@@ -7,13 +7,18 @@ import { auth } from "../../firebase/Config";
 import { AppContext } from "../../context/AppContext";
 import { useNavigate } from "react-router-dom";
 const LogForm = () => {
-  const { setIsAuth, setUser, user } = useContext(AppContext);
+  const { setIsAuth, setUser } = useContext(AppContext);
   const navigate = useNavigate();
   const onSubmit = (values, actions) => {
     signInWithEmailAndPassword(auth, values.email, values.password)
       .then((res) => {
+        const user = {
+          email: res.user.auth.currentUser.email,
+          uid: res.user.auth.currentUser.uid,
+        };
         localStorage.setItem("isAuth", true);
-        setUser(res.user.auth);
+        localStorage.setItem("user", JSON.stringify(user));
+        setUser(user);
         setIsAuth(true);
         navigate("/");
       })

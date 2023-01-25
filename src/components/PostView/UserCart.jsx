@@ -12,7 +12,7 @@ const UserCart = () => {
         alt="Remy Sharp"
         src={avat}
       />
-      <h1 className="text-center mt-2 text-2xl"> {postDetail.author} </h1>
+      <h1 className="text-center mt-2 text-md"> {postDetail.author} </h1>
     </div>
   );
 };

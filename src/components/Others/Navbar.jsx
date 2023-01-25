@@ -18,7 +18,7 @@ const Navbar = () => {
     <div
       className={`${
         isDark ? "bg-indigo-400" : "bg-yellow-300"
-      }  py-3 px-10  lg:px-40   mx-auto flex items-center justify-between`}
+      }  py-3 px-10 lg:px-40   mx-auto flex items-center justify-between`}
     >
       <div className="cursor-pointer">
         <Icon />
@@ -27,11 +27,11 @@ const Navbar = () => {
         <>
           <AskQuButton />
           <div>
-            <Button>
-              <Link to="/">
+            <Link to="/">
+              <Button>
                 <HomeIcon />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
             <LogOut />
           </div>
         </>

@@ -1,24 +1,23 @@
 import React, { useContext } from "react";
-import Comment from "../components/PostView/Comment";
-import UserCart from "../components/PostView/UserCart";
 import PostDetail from "../components/PostView/PostDetail";
 import CreateComment from "../components/PostView/CreateComment";
 import { AppContext } from "../context/AppContext";
+import Comments from "../components/PostView/Comments";
 const PostView = () => {
   const { isDark } = useContext(AppContext);
+
   return (
     <div
       className={`${
         isDark ? "bg-gray-900" : "bg-[#fbf8f8]"
-      }  flex h-screen w-full  mx-auto  `}
+      }  flex h-screen w-full  min-w-4 mx-auto  `}
     >
-      <div className=" md:flex gap-20 justify-center md:px-64 mt-10  min-w-md  mx-auto md:mx-0">
+      <div className=" md:flex gap-20 justify-center  mt-10  min-w-md  mx-auto ">
         <div>
           <PostDetail />
           <CreateComment />
-          <Comment />
+          <Comments />
         </div>
-        <UserCart />
       </div>
     </div>
   );

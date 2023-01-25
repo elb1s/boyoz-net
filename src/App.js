@@ -29,22 +29,26 @@ function App() {
       },
     },
   });
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
   const [postList, setPostList] = useState([]);
-  const [postDetail, setPostDeatil] = useState("");
-  const [isDark, setIsDark] = useState(true);
+  const [postDetail, setPostDetail] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [isDark, setIsDark] = useState(localStorage.getItem("isDark"));
+
   const values = {
     postList,
     setPostList,
     postDetail,
-    setPostDeatil,
+    setPostDetail,
     isDark,
     setIsDark,
     isAuth,
     setIsAuth,
     user,
     setUser,
+    comments,
+    setComments,
   };
   return (
     <ThemeProvider theme={theme}>

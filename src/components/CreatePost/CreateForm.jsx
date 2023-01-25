@@ -5,23 +5,24 @@ import { createPoSchema } from "../../schemas/CreatePostSchema";
 import { db, auth } from "../../firebase/Config";
 import { addDoc, collection } from "firebase/firestore";
 import { AppContext } from "../../context/AppContext";
-const onSubmit = (values, actions) => {
-  createPost(values.title, values.quesBody);
-  actions.resetForm();
-};
-const createPost = async (title, quesBody) => {
-  const postsCollecRef = collection(db, "posts");
-  await addDoc(postsCollecRef, {
-    title,
-    quesBody,
-    author: auth.currentUser.email,
-    authId: auth.currentUser.uid,
-    comments: [],
-  });
-};
 
 const CreateForm = () => {
   const { isDark } = useContext(AppContext);
+
+  const onSubmit = (values, actions) => {
+    createPost(values.title, values.quesBody);
+    actions.resetForm();
+  };
+  const createPost = async (title, quesBody) => {
+    const postsCollecRef = collection(db, "posts");
+    await addDoc(postsCollecRef, {
+      title,
+      quesBody,
+      author: auth.currentUser.email,
+      authId: auth.currentUser.uid,
+      comments: [],
+    });
+  };
   const { handleChange, handleSubmit, values, errors, touched } = useFormik({
     initialValues: {
       userid: "",

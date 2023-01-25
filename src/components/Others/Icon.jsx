@@ -7,6 +7,7 @@ export const Icon = () => {
     <DarkModeIcon
       onClick={() => {
         setIsDark(!isDark);
+        localStorage.setItem("isDark", !isDark);
       }}
       fontSize="large"
     />
