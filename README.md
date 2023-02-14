@@ -14,4 +14,4 @@ Technologies utilized:
 * Tailwind
 * Firebase
 <hr>
-You can try <a href="https://boyoz.netlify.app/" target="_blank" >demo</a> here or watch demo <a href="https://www.youtube.com/watch?v=BJjt7sxEV-g" target="_blank">video</a>.
+You can try <a href="https://boyoz.netlify.app/" target="blank" >demo</a> here or watch demo <a href="https://www.youtube.com/watch?v=BJjt7sxEV-g" target="blank">video</a>.
